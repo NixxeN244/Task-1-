@@ -39,7 +39,7 @@ namespace TASK_1_Code
 
     }
 
-    class ObstacleSubClass : Tile   //class that inherits from the Tile class Ghost commit on the Obs subclass
+    class ObstacleSubClass : Tile   //class that inherits from the Tile class Ghost commit on the Obs class
     {
         public ObstacleSubClass(int X, int Y) : base(X, Y)
         {
