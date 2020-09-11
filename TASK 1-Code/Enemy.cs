@@ -8,5 +8,5 @@ namespace TASK_1_Code
 {
     class Enemy : Character
     {
-    }
+        //commit changes
 }
