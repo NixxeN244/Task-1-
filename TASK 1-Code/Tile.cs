@@ -23,7 +23,7 @@ namespace TASK_1_Code
             set { y = value; }
         }
 
-        public enum TileType    //enums members are denoted as an int "type". starting from 0 and increasing by 1 for each member
+        public enum TileType    //enums members are denoted as an int "type". starting from 0 and increasing by 1 for each member. Ghost commit for the Tile enum type
         {
             Hero,   // TileType.Hero = 0. meaning this int value member will be 0.
             Enemey, //TileType.Enemy = 1. meaning this int value member will be 1
@@ -39,7 +39,7 @@ namespace TASK_1_Code
 
     }
 
-    class ObstacleSubClass : Tile   //class that inherits from the Tile class
+    class ObstacleSubClass : Tile   //class that inherits from the Tile class Ghost commit on the Obs subclass
     {
         public ObstacleSubClass(int X, int Y) : base(X, Y)
         {
