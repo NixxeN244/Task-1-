@@ -8,7 +8,7 @@ namespace TASK_1_Code
 {
     abstract class Tile
     {
-        protected int x;    //this value is a protected field
+        protected int x;    //this value is a protected field   Ghost commit.
         protected int y;    //this value is a protected filed
 
         public int Xvalue   //this accessor is a PROPERTY of this class for the x value.
