@@ -8,7 +8,7 @@ namespace TASK_1_Code
 {
     class Map
     {
-        private char[,] gameMap;    //the char array that will be displayed. IE our map UI.
+        private Tile[,] gameMap;    //the char array that will be displayed. IE our map UI.
         private Hero playerobj;
         private Enemy[] enemyArray;
         private int mapwidth;
@@ -16,7 +16,7 @@ namespace TASK_1_Code
         private Random randomNum;
 
 
-        public char[,] GameMap
+        public Tile[,] GameMap
         {
             get { return gameMap; }
             set { gameMap = value; }
@@ -43,6 +43,42 @@ namespace TASK_1_Code
         {
             get { return mpaheight; }
             set { mpaheight = value; }
+        }
+
+
+
+        public Map(int minwidth, int maxwidth, int minheight, int maxheight, int numofenemies)
+        {
+            MapWidth = randomNum.Next(minwidth, maxwidth);
+            MapHeight = randomNum.Next(minheight, maxheight);
+            GameMap = new  Tile[MapWidth, MapHeight];
+            EnemeyArray = new Enemy[numofenemies];
+        }
+
+
+        public void UpdateVision()
+        {
+
+        }
+        private Tile Create(Tile.TileType type)
+        {
+            switch (type)
+            {
+                case Tile.TileType.Hero:
+                    PlayerObj.Xvalue = randomNum.Next(1, MapWidth-1);
+                    PlayerObj.Yvalue = randomNum.Next(1, MapHeight-1);
+                    return PlayerObj;
+                    break;
+                case Tile.TileType.Enemey:
+                    
+                    break;
+                case Tile.TileType.Gold:
+                    break;
+                case Tile.TileType.Weapon:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
