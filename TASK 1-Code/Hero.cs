@@ -13,5 +13,16 @@ namespace TASK_1_Code
         {
             this.Damage = 2;
         }
+
+        public override Movement ReturnMove(Movement move = Movement.No_movement)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Player Stats: \n" + "HP: " +this.HP +"/ " +this.Max_HP + "\n" +
+                                    "Damage: 2 \n" + "[" + this.Xvalue + "," + this.Yvalue + "]");
+        }
     }
 }
