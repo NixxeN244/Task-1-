@@ -19,15 +19,28 @@ namespace TASK_1_Code
 
         public Enemy(int Xvalue, int Yvalue, int max_HP, int Enemy_dmage, char symbol) : base(Xvalue, Yvalue, symbol)
         {
-            Xvalue = this.Xvalue;
-            Yvalue = this.Yvalue;
-            max_HP = this.Max_HP;
-            Enemy_dmage = this.Damage;
+        
         }
 
-        public override string ToString()
+        public override string ToString()   //override method that returns a string that shows the enemy type, it X and Y values as well as it's damage
         {
-          return string.Format(this.GetType().ToString() + this.Xvalue + this.Yvalue + this.Damage); 
+          return string.Format(this.GetType() + " at " + "[" + this.Xvalue + ", " + this.Yvalue + "]" + "("+ this.Damage +")"); 
         }
+    }
+
+    class Goblin : Enemy
+    {
+
+        public Goblin(int Xvalue, int Yvalue):base(Xvalue,Yvalue,10,1,'G')
+        {
+
+
+        }
+
+
+
+
+
+
     }
 }
