@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -53,6 +54,14 @@ namespace TASK_1_Code
             MapHeight = randomNum.Next(minheight, maxheight);
             GameMap = new  Tile[MapWidth, MapHeight];
             EnemeyArray = new Enemy[numofenemies];
+            Create(Tile.TileType.Hero);
+            GameMap[playerobj.Xvalue, playerobj.Yvalue];
+
+            for (int i = 0; i < EnemeyArray.Length; i++)
+            {
+                EnemeyArray[i] = (Enemy)Create(Tile.TileType.Enemey);
+
+            }
         }
 
 
@@ -67,11 +76,13 @@ namespace TASK_1_Code
                 case Tile.TileType.Hero:
                     PlayerObj.Xvalue = randomNum.Next(1, MapWidth-1);
                     PlayerObj.Yvalue = randomNum.Next(1, MapHeight-1);
+
                     return PlayerObj;
-                    break;
+
                 case Tile.TileType.Enemey:
+                    Goblin enemy1 = new Goblin(randomNum.Next(1,MapWidth-1) ,randomNum.Next(1,MapHeight-1));
+                    return enemy1;
                     
-                    break;
                 case Tile.TileType.Gold:
                     break;
                 case Tile.TileType.Weapon:
