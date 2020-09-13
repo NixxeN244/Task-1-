@@ -1,0 +1,5 @@
+D:\vega work\YEAR 2\Semester 2\GADE 2\POE\Task 1\Task-1-\TASK 1-Code\obj\Debug\TASK 1-Code.csprojAssemblyReference.cache
+D:\vega work\YEAR 2\Semester 2\GADE 2\POE\Task 1\Task-1-\TASK 1-Code\obj\Debug\TASK_1_Code.Form1.resources
+D:\vega work\YEAR 2\Semester 2\GADE 2\POE\Task 1\Task-1-\TASK 1-Code\obj\Debug\TASK_1_Code.Properties.Resources.resources
+D:\vega work\YEAR 2\Semester 2\GADE 2\POE\Task 1\Task-1-\TASK 1-Code\obj\Debug\TASK 1-Code.csproj.GenerateResource.cache
+D:\vega work\YEAR 2\Semester 2\GADE 2\POE\Task 1\Task-1-\TASK 1-Code\obj\Debug\TASK 1-Code.csproj.CoreCompileInputs.cache
