@@ -18,7 +18,7 @@ namespace Task_1_Retry
 
         public GameEngine()
         {
-            Map gameMap = new Map(1, 11, 1, 11, 3);
+            Gmap = new Map(1, 11, 1, 11, 3);
 
         }
         public string ParseMap

@@ -53,6 +53,8 @@ namespace Task_1_Retry
             MapHeight = randomNum.Next(minheight, maxheight);
             GameMap = new Tile[MapWidth, MapHeight];
             EnemeyArray = new Enemy[numofenemies];
+            PlayerObj.Xvalue = 1;
+            PlayerObj.Yvalue = 1;
             Create(Tile.TileType.Hero);
 
 
@@ -95,7 +97,6 @@ namespace Task_1_Retry
                     Goblin goblin = new Goblin(randomNum.Next(1, MapWidth - 1), randomNum.Next(1, MapHeight - 1));
                     PlaceObject(goblin);
                     return goblin;
-
                 case Tile.TileType.Gold:
                     return null;
                 case Tile.TileType.Weapon:

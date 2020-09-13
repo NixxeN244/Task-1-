@@ -16,6 +16,7 @@ namespace Task_1_Retry
         public override Movement ReturnMove(Movement move = Movement.No_movement)
         {
             throw new NotImplementedException();
+
         }
 
         public override string ToString()

@@ -7,3 +7,4 @@ D:\vega work\YEAR 2\Semester 2\GADE 2\POE\Task 1\Task-1-\Task 1 Retry\obj\Debug\
 D:\vega work\YEAR 2\Semester 2\GADE 2\POE\Task 1\Task-1-\Task 1 Retry\obj\Debug\Task 1 Retry.csproj.CoreCompileInputs.cache
 D:\vega work\YEAR 2\Semester 2\GADE 2\POE\Task 1\Task-1-\Task 1 Retry\obj\Debug\Task 1 Retry.exe
 D:\vega work\YEAR 2\Semester 2\GADE 2\POE\Task 1\Task-1-\Task 1 Retry\obj\Debug\Task 1 Retry.pdb
+D:\vega work\YEAR 2\Semester 2\GADE 2\POE\Task 1\Task-1-\Task 1 Retry\obj\Debug\Task_1_Retry.Form1.resources
