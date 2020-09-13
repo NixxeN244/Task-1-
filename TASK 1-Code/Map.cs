@@ -14,7 +14,7 @@ namespace TASK_1_Code
         private Enemy[] enemyArray;
         private int mapwidth;
         private int mpaheight;
-        private Random randomNum = new Random();
+        private readonly Random randomNum = new Random();
 
 
         public Tile[,] GameMap

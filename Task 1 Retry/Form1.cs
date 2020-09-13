@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TASK_1_Code
+namespace Task_1_Retry
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            GameEngine GM = new GameEngine();
-            MAPUILbl.Text = GM.ToString();
         }
     }
 }

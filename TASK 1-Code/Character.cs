@@ -53,7 +53,7 @@ namespace TASK_1_Code
         {
             target.HP = target.HP - this.Damage;
         }
-        public bool isDead()
+        public bool IsDead()
         {
             if (this.HP>=0)
             {
