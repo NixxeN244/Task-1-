@@ -31,13 +31,13 @@ namespace TASK_1_Code
     class Goblin : Enemy
     {
 
-        public Goblin(int Xvalue, int Yvalue) : base(Xvalue, Yvalue, 10, 1, 'G')
+        public Goblin(int Xvalue, int Yvalue) : base(Xvalue, Yvalue, 10, 1, 'G')    //A basic subclass that takes info from the enemy class
         {
 
 
         }
 
-        public override Movement ReturnMove(Movement move = Movement.No_movement)
+        public override Movement ReturnMove(Movement move = Movement.No_movement)   //movement of the Goblin class 
         {
             throw new NotImplementedException();
         }

@@ -55,13 +55,13 @@ namespace TASK_1_Code
             GameMap = new  Tile[MapWidth, MapHeight];
             EnemeyArray = new Enemy[numofenemies];
             Create(Tile.TileType.Hero);
-            GameMap[playerobj.Xvalue, playerobj.Yvalue];
+            
 
             for (int i = 0; i < EnemeyArray.Length; i++)
             {
                 EnemeyArray[i] = (Enemy)Create(Tile.TileType.Enemey);
-
             }
+
         }
 
 
@@ -76,20 +76,27 @@ namespace TASK_1_Code
                 case Tile.TileType.Hero:
                     PlayerObj.Xvalue = randomNum.Next(1, MapWidth-1);
                     PlayerObj.Yvalue = randomNum.Next(1, MapHeight-1);
-
+                    PlaceObject(PlayerObj);
                     return PlayerObj;
 
                 case Tile.TileType.Enemey:
-                    Goblin enemy1 = new Goblin(randomNum.Next(1,MapWidth-1) ,randomNum.Next(1,MapHeight-1));
-                    return enemy1;
+                    Goblin goblin = new Goblin(randomNum.Next(1,MapWidth-1) ,randomNum.Next(1,MapHeight-1));
+                    PlaceObject(goblin);
+                    return goblin;
                     
                 case Tile.TileType.Gold:
-                    break;
+                    
                 case Tile.TileType.Weapon:
-                    break;
+                    
                 default:
                     break;
             }
+        }
+
+        public Tile PlaceObject(Tile obj)
+        {
+         return   GameMap[obj.Xvalue, obj.Yvalue];
+
         }
     }
 }
