@@ -33,6 +33,8 @@ namespace Task_1_Retry
 
         public Tile(int X, int Y) //Constructor for this base class that sets the parameters to the properties of the class.
         {
+            X = 0;
+            Y = 0;
             Xvalue = X;
             Yvalue = Y;
         }

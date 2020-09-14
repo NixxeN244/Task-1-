@@ -12,11 +12,11 @@ namespace Task_1_Retry
         private Hero playerobj;
         private Enemy[] enemyArray;
         private int mapwidth;
-        private int mpaheight;
-        private readonly Random randomNum = new Random();
+        private int mapheight;
+        private  Random randomNum = new Random();
 
 
-        public Tile[,] GameMap
+   /*     public Tile[,] GameMap
         {
             get { return gameMap; }
             set { gameMap = value; }
@@ -44,31 +44,30 @@ namespace Task_1_Retry
             get { return mpaheight; }
             set { mpaheight = value; }
         }
-
+   */
 
 
         public Map(int minwidth, int maxwidth, int minheight, int maxheight, int numofenemies)
         {
-            MapWidth = randomNum.Next(minwidth, maxwidth);
-            MapHeight = randomNum.Next(minheight, maxheight);
-            GameMap = new Tile[MapWidth, MapHeight];
-            EnemeyArray = new Enemy[numofenemies];
-            PlayerObj.Xvalue = 1;
-            PlayerObj.Yvalue = 1;
+            mapwidth = randomNum.Next(minwidth, maxwidth);
+            mapheight = randomNum.Next(minheight, maxheight);
+            gameMap= new Tile[mapwidth, mapheight];
+            enemyArray = new Enemy[numofenemies];
+
             Create(Tile.TileType.Hero);
 
 
-            for (int i = 0; i < EnemeyArray.Length; i++)
+            for (int i = 0; i < enemyArray.Length; i++)
             {
-                EnemeyArray[i] = (Enemy)Create(Tile.TileType.Enemey);
+                enemyArray[i] = (Enemy)Create(Tile.TileType.Enemey);
             }
 
         }
 
 
-        public void UpdateVision()
+      /*  public void UpdateVision()
         {
-            PlayerObj.Char_vision[0] = GameMap[PlayerObj.Xvalue, PlayerObj.Yvalue];  //the pos where the player is at that moment
+            playerobj.Char_vision[0] = gameMap[PlayerObj.Xvalue, PlayerObj.Yvalue];  //the pos where the player is at that moment
             PlayerObj.Char_vision[1] = GameMap[PlayerObj.Xvalue + 1, PlayerObj.Yvalue]; //To the right of the player 
             PlayerObj.Char_vision[2] = GameMap[PlayerObj.Xvalue, PlayerObj.Yvalue + 1]; //Down from the player
             PlayerObj.Char_vision[3] = GameMap[PlayerObj.Xvalue - 1, PlayerObj.Yvalue]; //Left of the player
@@ -83,19 +82,21 @@ namespace Task_1_Retry
                 EnemeyArray[k].Char_vision[4] = GameMap[EnemeyArray[k].Xvalue, EnemeyArray[k].Yvalue - 1]; //the top of the enemy pos
             };
         }
+      */
         private Tile Create(Tile.TileType type)
         {
             switch (type)
             {
                 case Tile.TileType.Hero:
                     PlayerObj.Xvalue = randomNum.Next(1, MapWidth - 1);
+                    break;
                     PlayerObj.Yvalue = randomNum.Next(1, MapHeight - 1);
-                    PlaceObject(PlayerObj);
+                    GameMap[PlayerObj.Xvalue,PlayerObj.Yvalue] = GameMap[PlayerObj.Xvalue,PlayerObj.Yvalue];
                     return PlayerObj;
 
                 case Tile.TileType.Enemey:
                     Goblin goblin = new Goblin(randomNum.Next(1, MapWidth - 1), randomNum.Next(1, MapHeight - 1));
-                    PlaceObject(goblin);
+                    
                     return goblin;
                 case Tile.TileType.Gold:
                     return null;
@@ -105,12 +106,6 @@ namespace Task_1_Retry
                     return null;
 
             }
-        }
-
-        public void PlaceObject(Tile obj)
-        {
-            obj = GameMap[obj.Xvalue, obj.Yvalue];
-
         }
     }
 }

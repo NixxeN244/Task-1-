@@ -11,6 +11,8 @@ namespace Task_1_Retry
         public Hero(int X, int Y, int Hero_HP, int Hero_MaxHP) : base(X, Y, 'H')
         {
             this.Damage = 2;
+            this.Xvalue = X;
+            this.Yvalue = Y;
         }
 
         public override Movement ReturnMove(Movement move = Movement.No_movement)
