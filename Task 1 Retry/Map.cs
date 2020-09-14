@@ -8,95 +8,94 @@ namespace Task_1_Retry
 {
     class Map
     {
-        private Tile[,] gameMap;    //the char array that will be displayed. IE our map UI.
-        private Hero playerobj;
-        private Enemy[] enemyArray;
-        private int mapwidth;
-        private int mapheight;
-        private  Random randomNum = new Random();
+        private Random randomNum = new Random();
 
 
-   /*     public Tile[,] GameMap
-        {
-            get { return gameMap; }
-            set { gameMap = value; }
-        }
+        public Tile[,] GameMap { get; set; }
 
-        public Hero PlayerObj
-        {
-            get { return playerobj; }
-            set { playerobj = value; }
-        }
+        public Hero PlayerObj { get; set; }
 
-        public Enemy[] EnemeyArray
-        {
-            get { return enemyArray; }
-            set { enemyArray = value; }
-        }
+        public Enemy[] EnemeyArray { get; set; }
 
-        public int MapWidth
-        {
-            get { return mapwidth; }
-            set { mapwidth = value; }
-        }
-        public int MapHeight
-        {
-            get { return mpaheight; }
-            set { mpaheight = value; }
-        }
-   */
+        public int MapWidth { get; set; }
+        public int MapHeight { get; set; }
+
 
 
         public Map(int minwidth, int maxwidth, int minheight, int maxheight, int numofenemies)
         {
-            mapwidth = randomNum.Next(minwidth, maxwidth);
-            mapheight = randomNum.Next(minheight, maxheight);
-            gameMap= new Tile[mapwidth, mapheight];
-            enemyArray = new Enemy[numofenemies];
+            MapWidth = randomNum.Next(minwidth, maxwidth);
+            MapHeight = randomNum.Next(minheight, maxheight);
+            GameMap = new Tile[MapWidth, MapHeight];
+            EnemeyArray = new Enemy[numofenemies];
+
+            for (int i = 0; i < GameMap.GetLength(0); i++)  //Creating of empty tiles so that TIles exisit within the class
+            {
+                for (int k = 0; k < GameMap.GetLength(1); k++)
+                {
+                    GameMap[i, k] = new EmptyTile(i, k);
+                }
+            }
+
+            for (int i = 0; i < GameMap.GetLength(0); i++)  //for loop that creates and palces the border on the top and bottom of the map
+            {
+
+                GameMap[i, 0] = new ObstacleSubClass(i, 0); //assiging the top of the map with Obstacles or "X"
+                GameMap[i, MapHeight-1] = new ObstacleSubClass(i, MapHeight-1); //assigning the bottom of the map with Obstacles or "X"
+            }
+
+
+           for (int i = 0; i < GameMap.GetLength(1); i++)
+            {
+                GameMap[0, i] = new ObstacleSubClass(0, i);   //assiging Obstacl    es to the left of the map "X"
+                GameMap[MapWidth-1, i] = new ObstacleSubClass(MapWidth-1,i);    
+            } 
 
             Create(Tile.TileType.Hero);
-
-
-            for (int i = 0; i < enemyArray.Length; i++)
+            do
             {
-                enemyArray[i] = (Enemy)Create(Tile.TileType.Enemey);
+
+            } while (PlayerObj.GetType() == );
+            PlaceObject(PlayerObj);
+
+
+            for (int i = 0; i < EnemeyArray.Length; i++)
+            {
+                EnemeyArray[i] = (Enemy)Create(Tile.TileType.Enemey);
             }
 
         }
 
 
-      /*  public void UpdateVision()
-        {
-            playerobj.Char_vision[0] = gameMap[PlayerObj.Xvalue, PlayerObj.Yvalue];  //the pos where the player is at that moment
-            PlayerObj.Char_vision[1] = GameMap[PlayerObj.Xvalue + 1, PlayerObj.Yvalue]; //To the right of the player 
-            PlayerObj.Char_vision[2] = GameMap[PlayerObj.Xvalue, PlayerObj.Yvalue + 1]; //Down from the player
-            PlayerObj.Char_vision[3] = GameMap[PlayerObj.Xvalue - 1, PlayerObj.Yvalue]; //Left of the player
-            PlayerObj.Char_vision[4] = GameMap[PlayerObj.Xvalue, PlayerObj.Yvalue - 1]; //top of the player
+        /*  public void UpdateVision()
+          {
+              playerobj.Char_vision[0] = gameMap[PlayerObj.Xvalue, PlayerObj.Yvalue];  //the pos where the player is at that moment
+              PlayerObj.Char_vision[1] = GameMap[PlayerObj.Xvalue + 1, PlayerObj.Yvalue]; //To the right of the player 
+              PlayerObj.Char_vision[2] = GameMap[PlayerObj.Xvalue, PlayerObj.Yvalue + 1]; //Down from the player
+              PlayerObj.Char_vision[3] = GameMap[PlayerObj.Xvalue - 1, PlayerObj.Yvalue]; //Left of the player
+              PlayerObj.Char_vision[4] = GameMap[PlayerObj.Xvalue, PlayerObj.Yvalue - 1]; //top of the player
 
-            for (int k = 0; k < EnemeyArray.Length; k++)
-            {
-                EnemeyArray[k].Char_vision[0] = GameMap[EnemeyArray[k].Xvalue, EnemeyArray[k].Yvalue]; //the pos where the enemy is
-                EnemeyArray[k].Char_vision[1] = GameMap[EnemeyArray[k].Xvalue + 1, EnemeyArray[k].Yvalue]; // the right if the pos of the enemy
-                EnemeyArray[k].Char_vision[2] = GameMap[EnemeyArray[k].Xvalue, EnemeyArray[k].Yvalue + 1]; //down from the pos of the enemy
-                EnemeyArray[k].Char_vision[3] = GameMap[EnemeyArray[k].Xvalue - 1, EnemeyArray[k].Yvalue]; //the left of the pos of the enenmy
-                EnemeyArray[k].Char_vision[4] = GameMap[EnemeyArray[k].Xvalue, EnemeyArray[k].Yvalue - 1]; //the top of the enemy pos
-            };
-        }
-      */
-        private Tile Create(Tile.TileType type)
+              for (int k = 0; k < EnemeyArray.Length; k++)
+              {
+                  EnemeyArray[k].Char_vision[0] = GameMap[EnemeyArray[k].Xvalue, EnemeyArray[k].Yvalue]; //the pos where the enemy is
+                  EnemeyArray[k].Char_vision[1] = GameMap[EnemeyArray[k].Xvalue + 1, EnemeyArray[k].Yvalue]; // the right if the pos of the enemy
+                  EnemeyArray[k].Char_vision[2] = GameMap[EnemeyArray[k].Xvalue, EnemeyArray[k].Yvalue + 1]; //down from the pos of the enemy
+                  EnemeyArray[k].Char_vision[3] = GameMap[EnemeyArray[k].Xvalue - 1, EnemeyArray[k].Yvalue]; //the left of the pos of the enenmy
+                  EnemeyArray[k].Char_vision[4] = GameMap[EnemeyArray[k].Xvalue, EnemeyArray[k].Yvalue - 1]; //the top of the enemy pos
+              };
+          }
+        */
+        private Tile Create(Tile.TileType type) //A method that creates AND randomly places objects onto the map TIle
         {
             switch (type)
             {
                 case Tile.TileType.Hero:
-                    PlayerObj.Xvalue = randomNum.Next(1, MapWidth - 1);
-                    break;
-                    PlayerObj.Yvalue = randomNum.Next(1, MapHeight - 1);
-                    GameMap[PlayerObj.Xvalue,PlayerObj.Yvalue] = GameMap[PlayerObj.Xvalue,PlayerObj.Yvalue];
+                    PlayerObj = new Hero(randomNum.Next(1, MapWidth), randomNum.Next(1, MapHeight), 5, 5);
                     return PlayerObj;
+                    //This will return the Hero object. (which would be the player).
 
                 case Tile.TileType.Enemey:
                     Goblin goblin = new Goblin(randomNum.Next(1, MapWidth - 1), randomNum.Next(1, MapHeight - 1));
-                    
                     return goblin;
                 case Tile.TileType.Gold:
                     return null;
@@ -106,6 +105,12 @@ namespace Task_1_Retry
                     return null;
 
             }
+        }
+
+        public void PlaceObject(Tile obj)
+        {
+            GameMap[obj.Xvalue, obj.Yvalue] = obj;
+
         }
     }
 }
