@@ -17,9 +17,28 @@ namespace Task_1_Retry
             this.Yvalue = Y;
         }
 
-        public override Movement ReturnMove(Movement move = Movement.No_movement)
+        public override Movement ReturnMove(Movement move )
         {
-            throw new NotImplementedException();
+            switch (move)
+            {
+                case Movement.No_movement:
+                    return Movement.No_movement;
+                    
+                case Movement.Up:
+                    return Movement.Up;
+                    
+                case Movement.Down:
+                    return Movement.Down;
+                    
+                case Movement.Left:
+                    return Movement.Left;
+                    
+                case Movement.Right:
+                    return Movement.Right;
+                    
+                default:
+                    return Movement.No_movement;
+            }
 
         }
 

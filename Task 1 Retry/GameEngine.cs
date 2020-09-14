@@ -27,7 +27,10 @@ namespace Task_1_Retry
 
         public bool MovePlayer()
         {
-            return true;
+            if (map.pla)
+            {
+
+            }
         }
 
         public override string ToString()   //A method that will return the Map array into a string so that we can see it on the form

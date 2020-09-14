@@ -80,9 +80,9 @@ namespace Task_1_Retry
         }
 
 
-        /*  public void UpdateVision()
+         public void UpdateVision()
           {
-              playerobj.Char_vision[0] = gameMap[PlayerObj.Xvalue, PlayerObj.Yvalue];  //the pos where the player is at that moment
+              PlayerObj.Char_vision[0] = GameMap[PlayerObj.Xvalue, PlayerObj.Yvalue];  //the pos where the player is at that moment
               PlayerObj.Char_vision[1] = GameMap[PlayerObj.Xvalue + 1, PlayerObj.Yvalue]; //To the right of the player 
               PlayerObj.Char_vision[2] = GameMap[PlayerObj.Xvalue, PlayerObj.Yvalue + 1]; //Down from the player
               PlayerObj.Char_vision[3] = GameMap[PlayerObj.Xvalue - 1, PlayerObj.Yvalue]; //Left of the player
@@ -97,7 +97,7 @@ namespace Task_1_Retry
                   EnemeyArray[k].Char_vision[4] = GameMap[EnemeyArray[k].Xvalue, EnemeyArray[k].Yvalue - 1]; //the top of the enemy pos
               };
           }
-        */
+        
         private Tile Create(Tile.TileType type) //A method that creates AND randomly places objects onto the map TIle
         {
             switch (type)

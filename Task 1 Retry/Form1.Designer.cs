@@ -69,38 +69,42 @@
             // 
             // Upbtn
             // 
+            this.Upbtn.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Upbtn.Location = new System.Drawing.Point(624, 183);
             this.Upbtn.Name = "Upbtn";
             this.Upbtn.Size = new System.Drawing.Size(61, 50);
             this.Upbtn.TabIndex = 3;
-            this.Upbtn.Text = "button1";
+            this.Upbtn.Text = "^";
             this.Upbtn.UseVisualStyleBackColor = true;
             // 
             // DownBtn
             // 
+            this.DownBtn.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DownBtn.Location = new System.Drawing.Point(624, 239);
             this.DownBtn.Name = "DownBtn";
             this.DownBtn.Size = new System.Drawing.Size(61, 50);
             this.DownBtn.TabIndex = 3;
-            this.DownBtn.Text = "button1";
+            this.DownBtn.Text = "V";
             this.DownBtn.UseVisualStyleBackColor = true;
             // 
             // LeftBtn
             // 
+            this.LeftBtn.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LeftBtn.Location = new System.Drawing.Point(557, 213);
             this.LeftBtn.Name = "LeftBtn";
             this.LeftBtn.Size = new System.Drawing.Size(61, 50);
             this.LeftBtn.TabIndex = 3;
-            this.LeftBtn.Text = "button1";
+            this.LeftBtn.Text = "<";
             this.LeftBtn.UseVisualStyleBackColor = true;
             // 
             // RightBtn
             // 
+            this.RightBtn.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RightBtn.Location = new System.Drawing.Point(691, 213);
             this.RightBtn.Name = "RightBtn";
             this.RightBtn.Size = new System.Drawing.Size(61, 50);
             this.RightBtn.TabIndex = 3;
-            this.RightBtn.Text = "button1";
+            this.RightBtn.Text = ">";
             this.RightBtn.UseVisualStyleBackColor = true;
             // 
             // AttackBtn
