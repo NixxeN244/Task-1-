@@ -9,7 +9,7 @@ namespace Task_1_Retry
   abstract class Character : Tile
     {
         protected int hP;   //the field that contains the Character's Health
-        protected int max_HP;
+        protected int max_HP; //the field that contains the Character's max Heath.
         protected int damage;
         protected Tile[] char_vision;
 
@@ -18,6 +18,7 @@ namespace Task_1_Retry
         {
 
         }
+
         public int HP
         {
             get { return hP; }

@@ -27,10 +27,28 @@ namespace Task_1_Retry
 
         public bool MovePlayer()
         {
-            if (map.pla)
+            if (map.PlayerObj.Char_vision[1].GetType() == typeof(EmptyTile))
             {
-
+                return true;
             }
+            else if (map.PlayerObj.Char_vision[2].GetType() == typeof(EmptyTile))
+            {
+                return true;
+            }
+            else if (map.PlayerObj.Char_vision[3].GetType() == typeof(EmptyTile))
+            {
+                return true;
+            }
+            else if (map.PlayerObj.Char_vision[4].GetType()== typeof(EmptyTile))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
         }
 
         public override string ToString()   //A method that will return the Map array into a string so that we can see it on the form
