@@ -10,7 +10,7 @@ namespace Task_1_Retry
     {
         private Random randomNum = new Random();
 
-
+        public Goblin Goblin { get; set; }
         public Tile[,] GameMap { get; set; }
 
         public Hero PlayerObj { get; set; }
@@ -47,21 +47,34 @@ namespace Task_1_Retry
 
            for (int i = 0; i < GameMap.GetLength(1); i++)
             {
-                GameMap[0, i] = new ObstacleSubClass(0, i);   //assiging Obstacl    es to the left of the map "X"
-                GameMap[MapWidth-1, i] = new ObstacleSubClass(MapWidth-1,i);    
+                GameMap[0, i] = new ObstacleSubClass(0, i);   //assiging Obstacle to the left of the map "X"
+                GameMap[MapWidth-1, i] = new ObstacleSubClass(MapWidth-1,i);    //assigning Obstacles to the right of the map as "X"
             } 
 
-            Create(Tile.TileType.Hero);
+
+            Create(Tile.TileType.Hero); //Method that creats/intializes the Hero object
             do
             {
+                PlayerObj.Xvalue = randomNum.Next(1,MapWidth-1);
+                PlayerObj.Yvalue = randomNum.Next(1,MapHeight-1);
+            } while (GameMap[PlayerObj.Xvalue,PlayerObj.Yvalue].GetType() != typeof(EmptyTile));
 
-            } while (PlayerObj.GetType() == );
             PlaceObject(PlayerObj);
 
 
+            //looping through an creating the enemies that will be stored within the Enemy Array
             for (int i = 0; i < EnemeyArray.Length; i++)
             {
                 EnemeyArray[i] = (Enemy)Create(Tile.TileType.Enemey);
+            }
+            foreach (var Goblin in EnemeyArray)
+            {
+                do
+                {
+                    Goblin.Xvalue = randomNum.Next(1, MapWidth - 1);
+                    Goblin.Yvalue = randomNum.Next(1, MapHeight - 1);
+                } while (GameMap[Goblin.Xvalue,Goblin.Yvalue].GetType() != typeof(EmptyTile));
+                PlaceObject(Goblin);
             }
 
         }
@@ -95,8 +108,9 @@ namespace Task_1_Retry
                     //This will return the Hero object. (which would be the player).
 
                 case Tile.TileType.Enemey:
-                    Goblin goblin = new Goblin(randomNum.Next(1, MapWidth - 1), randomNum.Next(1, MapHeight - 1));
-                    return goblin;
+                    Goblin = new Goblin(randomNum.Next(1, MapWidth - 1), randomNum.Next(1, MapHeight - 1));
+                    //this pathway will return the enemy, which is the Goblin from the Goblin class.
+                    return Goblin;
                 case Tile.TileType.Gold:
                     return null;
                 case Tile.TileType.Weapon:

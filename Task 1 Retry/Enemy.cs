@@ -17,9 +17,11 @@ namespace Task_1_Retry
             set { randomobj = value; }
         }
 
-        public Enemy(int Xvalue, int Yvalue, int max_HP, int Enemy_dmage, char symbol) : base(Xvalue, Yvalue, symbol)
+        public Enemy(int Xvalue, int Yvalue,int HP, int max_HP, int Enemy_dmage, char symbol) : base(Xvalue, Yvalue, symbol)
         {
-
+            this.HP = HP;
+            this.Max_HP = max_HP;
+            this.Damage = Enemy_dmage;
         }
 
         public override string ToString()   //override method that returns a string that shows the enemy type, it X and Y values as well as it's damage
@@ -31,7 +33,7 @@ namespace Task_1_Retry
     class Goblin : Enemy
     {
 
-        public Goblin(int Xvalue, int Yvalue) : base(Xvalue, Yvalue, 10, 1, 'G')    //A basic subclass that takes info from the enemy class
+        public Goblin(int Xvalue, int Yvalue) : base(Xvalue, Yvalue,10, 10, 1, 'G')    //A basic subclass that takes info from the enemy class
         {
 
 

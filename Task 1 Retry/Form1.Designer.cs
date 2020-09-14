@@ -53,7 +53,7 @@
             // 
             this.PlayerStatsLbl.AutoSize = true;
             this.PlayerStatsLbl.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerStatsLbl.Location = new System.Drawing.Point(544, 9);
+            this.PlayerStatsLbl.Location = new System.Drawing.Point(506, 9);
             this.PlayerStatsLbl.Name = "PlayerStatsLbl";
             this.PlayerStatsLbl.Size = new System.Drawing.Size(125, 68);
             this.PlayerStatsLbl.TabIndex = 1;
@@ -61,9 +61,9 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(547, 97);
+            this.richTextBox1.Location = new System.Drawing.Point(509, 97);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(201, 55);
+            this.richTextBox1.Size = new System.Drawing.Size(239, 55);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 

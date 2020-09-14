@@ -14,17 +14,16 @@ namespace Task_1_Retry
         private static readonly string Empty = " ";
         private static readonly string Obstacle = "X";
 
+        
+
         public GameEngine()
         {
-           map = new Map(10, 10, 10, 10, 2);
+           map = new Map(10, 10, 10, 10, 5);
+            
 
         }
         public string ParseMap { get; set; }
-        /*  public Map Gmap
-          {
-              get { return map; }
-              set { map = value; }
-          }*/
+      
 
         public bool MovePlayer()
         {
@@ -60,5 +59,18 @@ namespace Task_1_Retry
             }
             return returnString;
         }
+
+
+        public string EnemyStats()
+        {
+            return map.Goblin.ToString();
+
+        }
+        public string PlayerStatsString()
+        {
+             return map.PlayerObj.ToString();
+
+        }
+
     }
 }

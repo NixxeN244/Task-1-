@@ -22,6 +22,7 @@ namespace Task_1_Retry
         private void Form1_Load(object sender, EventArgs e)
         {
             GameMapUILbl.Text = gameEngine.ToString();
+            PlayerStatsLbl.Text = gameEngine.PlayerStatsString();
         }
     }
 }
