@@ -82,19 +82,26 @@ namespace Task_1_Retry
 
          public void UpdateVision()
           {
+            for (int i = 0; i < PlayerObj.Char_vision.Length; i++)
+            {
+                PlayerObj.Char_vision[i] = new EmptyTile(PlayerObj.Xvalue,PlayerObj.Yvalue);
+            }
               PlayerObj.Char_vision[0] = GameMap[PlayerObj.Xvalue, PlayerObj.Yvalue];  //the pos where the player is at that moment
               PlayerObj.Char_vision[1] = GameMap[PlayerObj.Xvalue + 1, PlayerObj.Yvalue]; //To the right of the player 
               PlayerObj.Char_vision[2] = GameMap[PlayerObj.Xvalue, PlayerObj.Yvalue + 1]; //Down from the player
               PlayerObj.Char_vision[3] = GameMap[PlayerObj.Xvalue - 1, PlayerObj.Yvalue]; //Left of the player
               PlayerObj.Char_vision[4] = GameMap[PlayerObj.Xvalue, PlayerObj.Yvalue - 1]; //top of the player
 
+
               for (int k = 0; k < EnemeyArray.Length; k++)
               {
-                  EnemeyArray[k].Char_vision[0] = GameMap[EnemeyArray[k].Xvalue, EnemeyArray[k].Yvalue]; //the pos where the enemy is
-                  EnemeyArray[k].Char_vision[1] = GameMap[EnemeyArray[k].Xvalue + 1, EnemeyArray[k].Yvalue]; // the right if the pos of the enemy
-                  EnemeyArray[k].Char_vision[2] = GameMap[EnemeyArray[k].Xvalue, EnemeyArray[k].Yvalue + 1]; //down from the pos of the enemy
-                  EnemeyArray[k].Char_vision[3] = GameMap[EnemeyArray[k].Xvalue - 1, EnemeyArray[k].Yvalue]; //the left of the pos of the enenmy
-                  EnemeyArray[k].Char_vision[4] = GameMap[EnemeyArray[k].Xvalue, EnemeyArray[k].Yvalue - 1]; //the top of the enemy pos
+                EnemeyArray[k].Char_vision[k] = new EmptyTile(EnemeyArray[k].Xvalue, EnemeyArray[k].Yvalue);
+
+                EnemeyArray[k].Char_vision[k] = GameMap[EnemeyArray[k].Xvalue, EnemeyArray[k].Yvalue]; //the pos where the enemy is
+                  EnemeyArray[k].Char_vision[k] = GameMap[EnemeyArray[k].Xvalue + 1, EnemeyArray[k].Yvalue]; // the right if the pos of the enemy
+                  EnemeyArray[k].Char_vision[k] = GameMap[EnemeyArray[k].Xvalue, EnemeyArray[k].Yvalue + 1]; //down from the pos of the enemy
+                  EnemeyArray[k].Char_vision[k] = GameMap[EnemeyArray[k].Xvalue - 1, EnemeyArray[k].Yvalue]; //the left of the pos of the enenmy
+                  EnemeyArray[k].Char_vision[k] = GameMap[EnemeyArray[k].Xvalue, EnemeyArray[k].Yvalue - 1]; //the top of the enemy pos
               };
           }
         

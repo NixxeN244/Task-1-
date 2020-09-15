@@ -23,7 +23,13 @@ namespace Task_1_Retry
         {
             GameMapUILbl.Text = gameEngine.ToString();
             PlayerStatsLbl.Text = gameEngine.PlayerStatsString();
+            InfoTxtbox.Text = gameEngine.EnemyStats();
             
+        }
+
+        private void Upbtn_Click(object sender, EventArgs e)
+        {
+            gameEngine.MovePlayer(Character.Movement.Up);
         }
     }
 }

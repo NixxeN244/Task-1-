@@ -18,34 +18,39 @@ namespace Task_1_Retry
 
         public GameEngine()
         {
-           map = new Map(10, 10, 10, 10, 5);
+           map = new Map(15, 15, 15, 15, 3);
             
 
         }
         public string ParseMap { get; set; }
       
 
-        public bool MovePlayer()
+        public void MovePlayer(Character.Movement move)
         {
-            if (map.PlayerObj.Char_vision[1].GetType() == typeof(EmptyTile))
+            map.UpdateVision();
+            if (map.PlayerObj.ReturnMove(Character.Movement.Up)== move)
             {
-                return true;
+
+            }
+            if (map.PlayerObj.Char_vision[1].GetType() == typeof(EmptyTile))    //layer going up
+            {
+                
             }
             else if (map.PlayerObj.Char_vision[2].GetType() == typeof(EmptyTile))
             {
-                return true;
+                
             }
             else if (map.PlayerObj.Char_vision[3].GetType() == typeof(EmptyTile))
             {
-                return true;
+                
             }
             else if (map.PlayerObj.Char_vision[4].GetType()== typeof(EmptyTile))
             {
-                return true;
+                
             }
             else
             {
-                return false;
+                
             }
 
 
@@ -84,8 +89,12 @@ namespace Task_1_Retry
 
         public string EnemyStats()
         {
-            return map.Goblin.ToString();
-
+            string returninfo = " ";
+            for (int i = 0; i < map.EnemeyArray.Length; i++)
+            {
+                returninfo += map.EnemeyArray[i].ToString() + "\n";
+            }
+            return returninfo;
         }
         public string PlayerStatsString()
         {

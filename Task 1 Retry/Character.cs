@@ -11,7 +11,7 @@ namespace Task_1_Retry
         protected int hP;   //the field that contains the Character's Health
         protected int max_HP; //the field that contains the Character's max Heath.
         protected int damage;
-        protected Tile[] char_vision;
+        protected Tile[] char_vision = new Tile[5];
 
 
         public Character(int X, int Y, char symbol) : base(X, Y)

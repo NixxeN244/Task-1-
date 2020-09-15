@@ -30,7 +30,7 @@
         {
             this.GameMapUILbl = new System.Windows.Forms.Label();
             this.PlayerStatsLbl = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.InfoTxtbox = new System.Windows.Forms.RichTextBox();
             this.Upbtn = new System.Windows.Forms.Button();
             this.DownBtn = new System.Windows.Forms.Button();
             this.LeftBtn = new System.Windows.Forms.Button();
@@ -43,7 +43,7 @@
             this.GameMapUILbl.AutoSize = true;
             this.GameMapUILbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.GameMapUILbl.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GameMapUILbl.Location = new System.Drawing.Point(196, 131);
+            this.GameMapUILbl.Location = new System.Drawing.Point(124, 133);
             this.GameMapUILbl.Name = "GameMapUILbl";
             this.GameMapUILbl.Size = new System.Drawing.Size(199, 87);
             this.GameMapUILbl.TabIndex = 0;
@@ -59,28 +59,30 @@
             this.PlayerStatsLbl.TabIndex = 1;
             this.PlayerStatsLbl.Text = "Player Stats:\r\nHp:\r\nDamage:\r\n{X,Y]";
             // 
-            // richTextBox1
+            // InfoTxtbox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(509, 97);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(239, 55);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.InfoTxtbox.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InfoTxtbox.Location = new System.Drawing.Point(482, 99);
+            this.InfoTxtbox.Name = "InfoTxtbox";
+            this.InfoTxtbox.Size = new System.Drawing.Size(306, 111);
+            this.InfoTxtbox.TabIndex = 2;
+            this.InfoTxtbox.Text = "";
             // 
             // Upbtn
             // 
             this.Upbtn.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Upbtn.Location = new System.Drawing.Point(624, 183);
+            this.Upbtn.Location = new System.Drawing.Point(624, 228);
             this.Upbtn.Name = "Upbtn";
             this.Upbtn.Size = new System.Drawing.Size(61, 50);
             this.Upbtn.TabIndex = 3;
             this.Upbtn.Text = "^";
             this.Upbtn.UseVisualStyleBackColor = true;
+            this.Upbtn.Click += new System.EventHandler(this.Upbtn_Click);
             // 
             // DownBtn
             // 
             this.DownBtn.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DownBtn.Location = new System.Drawing.Point(624, 239);
+            this.DownBtn.Location = new System.Drawing.Point(624, 284);
             this.DownBtn.Name = "DownBtn";
             this.DownBtn.Size = new System.Drawing.Size(61, 50);
             this.DownBtn.TabIndex = 3;
@@ -90,7 +92,7 @@
             // LeftBtn
             // 
             this.LeftBtn.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LeftBtn.Location = new System.Drawing.Point(557, 213);
+            this.LeftBtn.Location = new System.Drawing.Point(557, 258);
             this.LeftBtn.Name = "LeftBtn";
             this.LeftBtn.Size = new System.Drawing.Size(61, 50);
             this.LeftBtn.TabIndex = 3;
@@ -100,7 +102,7 @@
             // RightBtn
             // 
             this.RightBtn.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RightBtn.Location = new System.Drawing.Point(691, 213);
+            this.RightBtn.Location = new System.Drawing.Point(691, 258);
             this.RightBtn.Name = "RightBtn";
             this.RightBtn.Size = new System.Drawing.Size(61, 50);
             this.RightBtn.TabIndex = 3;
@@ -109,7 +111,7 @@
             // 
             // AttackBtn
             // 
-            this.AttackBtn.Location = new System.Drawing.Point(547, 316);
+            this.AttackBtn.Location = new System.Drawing.Point(547, 354);
             this.AttackBtn.Name = "AttackBtn";
             this.AttackBtn.Size = new System.Drawing.Size(205, 47);
             this.AttackBtn.TabIndex = 3;
@@ -126,7 +128,7 @@
             this.Controls.Add(this.AttackBtn);
             this.Controls.Add(this.DownBtn);
             this.Controls.Add(this.Upbtn);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.InfoTxtbox);
             this.Controls.Add(this.PlayerStatsLbl);
             this.Controls.Add(this.GameMapUILbl);
             this.Name = "Form1";
@@ -141,7 +143,7 @@
 
         private System.Windows.Forms.Label GameMapUILbl;
         private System.Windows.Forms.Label PlayerStatsLbl;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox InfoTxtbox;
         private System.Windows.Forms.Button Upbtn;
         private System.Windows.Forms.Button DownBtn;
         private System.Windows.Forms.Button LeftBtn;
