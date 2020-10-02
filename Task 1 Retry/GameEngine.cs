@@ -22,6 +22,9 @@ namespace Task_1_Retry
             
 
         }
+
+        public Map Map { get; set; }
+        
         public string ParseMap { get; set; }
       
 

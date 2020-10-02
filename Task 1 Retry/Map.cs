@@ -104,6 +104,11 @@ namespace Task_1_Retry
                   EnemeyArray[k].Char_vision[k] = GameMap[EnemeyArray[k].Xvalue, EnemeyArray[k].Yvalue - 1]; //the top of the enemy pos
               };
           }
+
+        public void RecurVision( Character c)
+        {
+            c.Char_vision[0] = 
+        }
         
         private Tile Create(Tile.TileType type) //A method that creates AND randomly places objects onto the map TIle
         {
@@ -124,7 +129,6 @@ namespace Task_1_Retry
                     return null;
                 default:
                     return null;
-
             }
         }
 

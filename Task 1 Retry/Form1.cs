@@ -30,6 +30,7 @@ namespace Task_1_Retry
         private void Upbtn_Click(object sender, EventArgs e)
         {
             gameEngine.MovePlayer(Character.Movement.Up);
+
         }
     }
 }
