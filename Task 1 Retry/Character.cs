@@ -104,11 +104,11 @@ namespace Task_1_Retry
                     break;
                 case Movement.Up:       //this would be 1, so they go up.
                     this.Xvalue = this.Xvalue;
-                    this.Yvalue = this.Yvalue + 1;
+                    this.Yvalue = this.Yvalue - 1;
                     break;
                 case Movement.Down:     //this would be 2. so they go down.
                     this.Xvalue = this.Xvalue;
-                    this.Yvalue = this.Yvalue - 1;
+                    this.Yvalue = this.Yvalue + 1;
                     break;
                 case Movement.Left:     //this would be 3. so they go left.
                     this.Xvalue = this.Xvalue - 1;

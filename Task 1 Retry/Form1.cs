@@ -23,14 +23,43 @@ namespace Task_1_Retry
         {
             GameMapUILbl.Text = gameEngine.ToString();
             PlayerStatsLbl.Text = gameEngine.PlayerStatsString();
-            InfoTxtbox.Text = gameEngine.EnemyStats();
+            listBox1.Text = gameEngine.EnemyStats();
+            
             
         }
 
         private void Upbtn_Click(object sender, EventArgs e)
         {
             gameEngine.MovePlayer(Character.Movement.Up);
+            GameMapUILbl.Text = gameEngine.ToString();
+            PlayerStatsLbl.Text = gameEngine.PlayerStatsString();
 
+        }
+
+        private void RightBtn_Click(object sender, EventArgs e)
+        {
+            gameEngine.MovePlayer(Character.Movement.Right);
+            GameMapUILbl.Text = gameEngine.ToString();
+            PlayerStatsLbl.Text = gameEngine.PlayerStatsString();
+        }
+
+        private void DownBtn_Click(object sender, EventArgs e)
+        {
+            gameEngine.MovePlayer(Character.Movement.Down);
+            GameMapUILbl.Text = gameEngine.ToString();
+            PlayerStatsLbl.Text = gameEngine.PlayerStatsString();
+        }
+
+        private void LeftBtn_Click(object sender, EventArgs e)
+        {
+            gameEngine.MovePlayer(Character.Movement.Left);
+            GameMapUILbl.Text = gameEngine.ToString();
+            PlayerStatsLbl.Text = gameEngine.PlayerStatsString();
+        }
+
+        private void AttackBtn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

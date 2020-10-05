@@ -31,29 +31,25 @@ namespace Task_1_Retry
         public void MovePlayer(Character.Movement move)
         {
             map.UpdateVision();
-            if (map.PlayerObj.ReturnMove(Character.Movement.Up)== move)
+            if (map.PlayerObj.ReturnMove(move) == Character.Movement.Up)
             {
-
+                map.PlayerObj.Move(move);
+                map.MapUpdate();
             }
-            if (map.PlayerObj.Char_vision[1].GetType() == typeof(EmptyTile))    //layer going up
+            else if (map.PlayerObj.ReturnMove(move) == Character.Movement.Down)
             {
-                
+                map.PlayerObj.Move(move);
+                map.MapUpdate();
             }
-            else if (map.PlayerObj.Char_vision[2].GetType() == typeof(EmptyTile))
+            else if (map.PlayerObj.ReturnMove(move) == Character.Movement.Left)
             {
-                
+                map.PlayerObj.Move(move);
+                map.MapUpdate();
             }
-            else if (map.PlayerObj.Char_vision[3].GetType() == typeof(EmptyTile))
+            else if (map.PlayerObj.ReturnMove(move) == Character.Movement.Right)
             {
-                
-            }
-            else if (map.PlayerObj.Char_vision[4].GetType()== typeof(EmptyTile))
-            {
-                
-            }
-            else
-            {
-                
+                map.PlayerObj.Move(move);
+                map.MapUpdate();
             }
 
 
@@ -62,9 +58,9 @@ namespace Task_1_Retry
         public override string ToString()   //A method that will return the Map array into a string so that we can see it on the form
         {
             string returnString = "";
-           for (int i = 0; i < map.GameMap.GetLength(0); i++)
+           for (int k = 0; k < map.GameMap.GetLength(0); k++)
             {
-                for (int k = 0; k < map.GameMap.GetLength(1); k++)
+                for (int i = 0; i < map.GameMap.GetLength(1); i++)
                 {
                     if (map.GameMap[i,k].GetType() == typeof(EmptyTile))
                     {

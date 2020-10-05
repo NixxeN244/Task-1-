@@ -10,11 +10,11 @@ namespace Task_1_Retry
     {
         public Hero(int X, int Y, int Hero_HP, int Hero_MaxHP) : base(X, Y, 'H')
         {
-            this.HP = Hero_HP;
-            this.Max_HP = Hero_MaxHP;
-            this.Damage = 2;
-            this.Xvalue = X;
-            this.Yvalue = Y;
+            HP = Hero_HP;
+            Max_HP = Hero_MaxHP;
+            Damage = 2;
+            Xvalue = X;
+            Yvalue = Y;
         }
 
         public override Movement ReturnMove(Movement move )
@@ -22,20 +22,50 @@ namespace Task_1_Retry
             switch (move)
             {
                 case Movement.No_movement:
+
                     return Movement.No_movement;
                     
                 case Movement.Up:
-                    return Movement.Up;
+                    if (char_vision[4].GetType() == typeof(EmptyTile))
+                    {
+                        return Movement.Up;
+                    }
+                    else
+                    {
+                        return Movement.No_movement;
+                    }
+                   
                     
                 case Movement.Down:
-                    return Movement.Down;
-                    
+                    if (char_vision[2].GetType() == typeof(EmptyTile))
+                    {
+                        return Movement.Down;
+                    }
+                    else
+                    {
+                        return Movement.No_movement;
+                    }
+                   
                 case Movement.Left:
-                    return Movement.Left;
-                    
+                    if (char_vision[3].GetType() == typeof(EmptyTile))
+                    {
+                        return Movement.Left;
+                    }
+                    else
+                    {
+                        return Movement.No_movement;
+                    }
+                   
                 case Movement.Right:
-                    return Movement.Right;
-                    
+                    if (char_vision[1].GetType() == typeof(EmptyTile))
+                    {
+                        return Movement.Right;
+                    }
+                    else
+                    {
+                        return Movement.No_movement;
+                    }
+                  
                 default:
                     return Movement.No_movement;
             }

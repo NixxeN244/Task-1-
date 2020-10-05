@@ -30,12 +30,12 @@
         {
             this.GameMapUILbl = new System.Windows.Forms.Label();
             this.PlayerStatsLbl = new System.Windows.Forms.Label();
-            this.InfoTxtbox = new System.Windows.Forms.RichTextBox();
             this.Upbtn = new System.Windows.Forms.Button();
             this.DownBtn = new System.Windows.Forms.Button();
             this.LeftBtn = new System.Windows.Forms.Button();
             this.RightBtn = new System.Windows.Forms.Button();
             this.AttackBtn = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // GameMapUILbl
@@ -59,15 +59,6 @@
             this.PlayerStatsLbl.TabIndex = 1;
             this.PlayerStatsLbl.Text = "Player Stats:\r\nHp:\r\nDamage:\r\n{X,Y]";
             // 
-            // InfoTxtbox
-            // 
-            this.InfoTxtbox.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InfoTxtbox.Location = new System.Drawing.Point(482, 99);
-            this.InfoTxtbox.Name = "InfoTxtbox";
-            this.InfoTxtbox.Size = new System.Drawing.Size(306, 111);
-            this.InfoTxtbox.TabIndex = 2;
-            this.InfoTxtbox.Text = "";
-            // 
             // Upbtn
             // 
             this.Upbtn.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,6 +79,7 @@
             this.DownBtn.TabIndex = 3;
             this.DownBtn.Text = "V";
             this.DownBtn.UseVisualStyleBackColor = true;
+            this.DownBtn.Click += new System.EventHandler(this.DownBtn_Click);
             // 
             // LeftBtn
             // 
@@ -98,6 +90,7 @@
             this.LeftBtn.TabIndex = 3;
             this.LeftBtn.Text = "<";
             this.LeftBtn.UseVisualStyleBackColor = true;
+            this.LeftBtn.Click += new System.EventHandler(this.LeftBtn_Click);
             // 
             // RightBtn
             // 
@@ -108,27 +101,37 @@
             this.RightBtn.TabIndex = 3;
             this.RightBtn.Text = ">";
             this.RightBtn.UseVisualStyleBackColor = true;
+            this.RightBtn.Click += new System.EventHandler(this.RightBtn_Click);
             // 
             // AttackBtn
             // 
-            this.AttackBtn.Location = new System.Drawing.Point(547, 354);
+            this.AttackBtn.Location = new System.Drawing.Point(509, 374);
             this.AttackBtn.Name = "AttackBtn";
             this.AttackBtn.Size = new System.Drawing.Size(205, 47);
             this.AttackBtn.TabIndex = 3;
-            this.AttackBtn.Text = "button1";
+            this.AttackBtn.Text = "Attack";
             this.AttackBtn.UseVisualStyleBackColor = true;
+            this.AttackBtn.Click += new System.EventHandler(this.AttackBtn_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(557, 99);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(202, 95);
+            this.listBox1.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.RightBtn);
             this.Controls.Add(this.LeftBtn);
             this.Controls.Add(this.AttackBtn);
             this.Controls.Add(this.DownBtn);
             this.Controls.Add(this.Upbtn);
-            this.Controls.Add(this.InfoTxtbox);
             this.Controls.Add(this.PlayerStatsLbl);
             this.Controls.Add(this.GameMapUILbl);
             this.Name = "Form1";
@@ -143,12 +146,12 @@
 
         private System.Windows.Forms.Label GameMapUILbl;
         private System.Windows.Forms.Label PlayerStatsLbl;
-        private System.Windows.Forms.RichTextBox InfoTxtbox;
         private System.Windows.Forms.Button Upbtn;
         private System.Windows.Forms.Button DownBtn;
         private System.Windows.Forms.Button LeftBtn;
         private System.Windows.Forms.Button RightBtn;
         private System.Windows.Forms.Button AttackBtn;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
